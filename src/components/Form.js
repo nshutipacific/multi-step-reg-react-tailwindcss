@@ -20,13 +20,13 @@ function Form() {
         <div className="form">
             <div className="progressbar"></div>
             <div className="form-container">
-                <div className="header bg-gray-900 p-4 text-white font-black w-full">
+                <div className="header py-4 font-black bg-gray-200">
                     <h1>{FormTitles[page]}</h1>
                 </div>
-                <div className="body mt-4">
+                <div className="body mt-4 mx-4">
                 {StepToDisplay()}
                 </div>
-                <div className="footer mt-4v flex justify-between mt-4">
+                <div className="footer mt-4 mx-4 flex justify-between mt-4">
                     <button
                     className="bg-blue-700 py-1 px-4 text-white rounded"
                     disabled={page == 0}
