@@ -1,10 +1,10 @@
-import Form from './components/Form';
+import DevelopersOverview from './components/DevelopersOverview';
 import './App.css';
 
 function App() {
   return (
     <div className="App bg-white">
-      <Form/>
+      <DevelopersOverview/>
     </div>
   );
 }
