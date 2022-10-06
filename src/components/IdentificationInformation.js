@@ -1,6 +1,6 @@
 import React from "react";
 
-function SignUpInfo({formData, setFormData}) {
+function IdentificationInformation({formData, setFormData}) {
     
     return (
         <div>
@@ -28,4 +28,4 @@ function SignUpInfo({formData, setFormData}) {
     );
 }
 
-export default SignUpInfo;
+export default IdentificationInformation;

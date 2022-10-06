@@ -1,6 +1,6 @@
 import React from "react";
 
-function OtherInformation({formData, setFormData}){
+function CarreerInformation({formData, setFormData}){
     return (
         <div>
             <div className="flex justify-between mt-2 gap-4">
@@ -25,4 +25,4 @@ function OtherInformation({formData, setFormData}){
     );
 }
 
-export default OtherInformation;
+export default CarreerInformation;

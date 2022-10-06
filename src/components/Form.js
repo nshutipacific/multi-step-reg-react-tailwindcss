@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react";
-import OtherInformation from "./OtherInformation";
-import PersonalInformation from "./PersonalInformation";
-import SignUpInfo from "./SignUpInfo";
+import React, { useState } from "react";
+import CarreerInformation from "./CarreerInformation";
+import ContactInformation from "./ContactInformation";
+import IdentificationInformation from "./IdentificationInformation";
 
 function Form() {
     const [page, setPage] = useState(0);
-    const FormTitles = ["Account Information", "Personal Information", "Other Information"];
+    const FormTitles = ["Identification", "Contact Info", "Career Info"];
 
     const [formData, setFormData] = useState({
         firstName: '',
@@ -22,11 +22,11 @@ function Form() {
 
     const StepToDisplay = () => {
         if (page === 0) {
-            return <SignUpInfo formData = { formData } setFormData = { setFormData} />
+            return <IdentificationInformation formData = { formData } setFormData = { setFormData} />
         } else if (page === 1) {
-            return <PersonalInformation formData = { formData } setFormData = { setFormData} />
+            return <ContactInformation formData = { formData } setFormData = { setFormData} />
         } else {
-            return <OtherInformation formData = { formData } setFormData = { setFormData}/>
+            return <CarreerInformation formData = { formData } setFormData = { setFormData}/>
         }
     }
 

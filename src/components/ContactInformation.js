@@ -1,6 +1,6 @@
 import React from "react";
 
-function PersonalInformation({formData, setFormData}){
+function ContactInformation({formData, setFormData}){
     return (
         <div>
             <div className="flex justify-between mt-2 gap-4">
@@ -25,4 +25,4 @@ function PersonalInformation({formData, setFormData}){
     );
 }
 
-export default PersonalInformation;
+export default ContactInformation;
