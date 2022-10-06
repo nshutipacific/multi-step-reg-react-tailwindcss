@@ -8,18 +8,16 @@ function Form() {
     const FormTitles = ["Account Information", "Personal Information", "Other Information"];
 
     const [formData, setFormData] = useState({
-        userName: '',
-        email: '',
-        password: '',
-        passwordConfirm: "",
         firstName: '',
         lastName: '',
-        phoneNumber: 0,
-        idNumber: 0,
-        nationality: '',
-        city: '',
+        userName: '',
+        email: "",
+        phone: '',
         address: '',
-        zip: 0
+        bio: '',
+        idNumber: '',
+        experiences: '',
+        yearsOfExperience: '',
     });
 
     const StepToDisplay = () => {
