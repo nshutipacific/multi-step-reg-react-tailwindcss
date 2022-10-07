@@ -54,17 +54,22 @@ function Form() {
                 </div>
                 <div className="footer mt-4 mx-4 flex justify-between mt-4">
                     <button
-                        className="bg-blue-700 py-1 px-4 text-white rounded"
+                        className="bg-blue-700 disabled:bg-gray-300 disabled:cursor-not-allowed py-1 px-4 text-white rounded"
                         disabled={page === 0}
                         onClick={() => {
                             setPage((currPage) => currPage - 1);
                         }}>Prev</button>
                     <button
-                        className="bg-blue-700 py-1 px-4 text-white rounded"
-                        disabled={page === FormTitles.length - 1}
+                        className="bg-blue-700 cursor-pointer py-1 px-4 text-white rounded"
                         onClick={() => {
-                            setPage((currPage) => currPage + 1);
-                        }}>Next</button>
+                            if(page === FormTitles.length - 1){
+                                //1. Submit Form Data on Click
+                            } else {
+                                setPage((currPage) => currPage + 1);
+                            }                            
+                        }}>
+                            {page === FormTitles.length - 1 ? "Save Data" : "Next"}
+                        </button>
                 </div>
             </div>
         </div>
