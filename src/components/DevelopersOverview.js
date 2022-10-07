@@ -1,5 +1,5 @@
 import React, { useState }  from "react";
-import axios from "axios";
+import DevelopersList from "./DevelopersList";
 import Form from "./Form";
 
 function DevelopersOverview(){
@@ -15,7 +15,7 @@ function DevelopersOverview(){
         } else if (step === 2){
             return 'Delete Component WIP';
         } else if (step === 3){
-            return 'Developers List';
+            return <DevelopersList/>;
         }
     }
     return (
