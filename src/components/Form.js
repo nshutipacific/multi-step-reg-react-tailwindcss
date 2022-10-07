@@ -64,6 +64,7 @@ function Form() {
                         className="bg-blue-700 cursor-pointer py-1 px-4 text-white rounded"
                         onClick={() => {
                             if (page === FormTitles.length - 1) {
+
                                 axios.post(`http://localhost:8000/api/developers/`, {
                                     first_name: formData.firstName,
                                     last_name: formData.lastName,
@@ -74,11 +75,11 @@ function Form() {
                                     experiences: formData.bio,
                                     years_of_experiences: formData.bio,
                                 })
-                                    .then((response) => {
-                                        console.log(response);
-                                    }, (error) => {
-                                        console.log(error);
-                                    });
+                                .then((response) => {
+
+                                }, (error) => {
+                                    
+                                });
                             } else {
                                 setPage((currPage) => currPage + 1);
                             }
