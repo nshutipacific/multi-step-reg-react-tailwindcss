@@ -41,7 +41,7 @@ function DevelopersList() {
                     );
                 })
             ) : (
-                <div> Error: {error}</div>
+                <div>{error}</div>
             )}
         </div>
     );

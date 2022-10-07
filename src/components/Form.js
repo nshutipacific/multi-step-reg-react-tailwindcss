@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 import CarreerInformation from "./CarreerInformation";
 import ContactInformation from "./ContactInformation";
 import IdentificationInformation from "./IdentificationInformation";
@@ -22,11 +23,11 @@ function Form() {
 
     const StepToDisplay = () => {
         if (page === 0) {
-            return <IdentificationInformation formData = { formData } setFormData = { setFormData} />
+            return <IdentificationInformation formData={formData} setFormData={setFormData} />
         } else if (page === 1) {
-            return <ContactInformation formData = { formData } setFormData = { setFormData} />
+            return <ContactInformation formData={formData} setFormData={setFormData} />
         } else {
-            return <CarreerInformation formData = { formData } setFormData = { setFormData}/>
+            return <CarreerInformation formData={formData} setFormData={setFormData} />
         }
     }
 
@@ -62,17 +63,31 @@ function Form() {
                     <button
                         className="bg-blue-700 cursor-pointer py-1 px-4 text-white rounded"
                         onClick={() => {
-                            if(page === FormTitles.length - 1){
-                                //1. Submit Form Data on Click
+                            if (page === FormTitles.length - 1) {
+                                axios.post(`http://localhost:8000/api/developers/`, {
+                                    first_name: formData.firstName,
+                                    last_name: formData.lastName,
+                                    username: formData.userName,
+                                    email: formData.email,
+                                    address: formData.phone,
+                                    bio: formData.address,
+                                    experiences: formData.bio,
+                                    years_of_experiences: formData.bio,
+                                })
+                                    .then((response) => {
+                                        console.log(response);
+                                    }, (error) => {
+                                        console.log(error);
+                                    });
                             } else {
                                 setPage((currPage) => currPage + 1);
-                            }                            
+                            }
                         }}>
-                            {page === FormTitles.length - 1 ? "Save Data" : "Next"}
-                        </button>
+                        {page === FormTitles.length - 1 ? "Save Data" : "Next"}
+                    </button>
                 </div>
             </div>
-        </div>
+        </div >
     )
 }
 
